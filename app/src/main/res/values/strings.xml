@@ -195,5 +195,30 @@
 <string name="change_deadline">Change Date</string>
 <string name="empty_markdown_preview">Nothing to preview yet</string>
 <string name="deselect_all">Deselect All</string>
-<string name="settings_section_behavior">Behavior &amp; Sorting</string><string name="backup_section_title">Backup &amp; Restore</string><string name="backup_export_title">Export local backup</string><string name="backup_export_subtitle">Save all tasks as a JSON file</string><string name="backup_import_title">Import local backup</string><string name="backup_import_subtitle">Restore tasks from a JSON file</string><string name="cloud_backup_new_token">New Token</string><string name="version">Version</string><string name="version_unknown">Unknown</string><string name="settings_theme_dialog_title">Choose Theme</string><string name="settings_font_dialog_subtitle">Choose font style for the app</string><string name="notification_lead_time_title">Notification Time</string><string name="settings_notification_lead_time_dialog_title">Notify before deadline</string><string name="settings_sort_order_dialog_title">Sort tasks by</string><string name="widget_pin_dialog_title">Add Widget</string><string name="widget_pin_dialog_description">Would you like to add a quick overview widget to your home screen?</string><string name="dialog_button_neutral">Not Now</string><string name="dialog_button_positive">Add Widget</string>
+    <string name="settings_section_behavior">Behavior &amp; Sorting</string>
+    <string name="backup_section_title">Backup &amp; Restore</string>
+    <string name="backup_export_title">Export local backup</string>
+    <string name="backup_export_subtitle">Save all tasks as a JSON file</string>
+    <string name="backup_import_title">Import local backup</string>
+    <string name="backup_import_subtitle">Restore tasks from a JSON file</string>
+    <string name="cloud_backup_new_token">New Token</string>
+    <string name="version">Version</string>
+    <string name="version_unknown">Unknown</string>
+    <string name="settings_theme_dialog_title">Choose Theme</string>
+    <string name="settings_font_dialog_subtitle">Choose font style for the app</string>
+    <string name="notification_lead_time_title">Notification Time</string>
+    <string name="settings_notification_lead_time_dialog_title">Notify before deadline</string>
+    <string name="settings_sort_order_dialog_title">Sort tasks by</string>
+    <string name="widget_pin_dialog_title">Add Widget</string>
+    <string name="widget_pin_dialog_description">Would you like to add a quick overview widget to your home screen?</string>
+    <string name="dialog_button_neutral">Not Now</string>
+    <string name="dialog_button_positive">Add Widget</string>
+    <string name="deadline_today">Today</string>
+    <string name="deadline_tomorrow">Tomorrow</string>
+    <string name="deadline_overdue">Overdue</string>
+    <string name="badge_count_items">%1$d</string>
+    <string name="collapse_section">Collapse</string>
+    <string name="expand_section">Expand</string>
+    <string name="batch_complete">Mark Complete</string>
+    <string name="batch_reopen">Mark Open</string>
 </resources>

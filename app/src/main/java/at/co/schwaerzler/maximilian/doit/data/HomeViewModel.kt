@@ -163,6 +163,23 @@ class HomeViewModel(
         }
     }
 
+    fun batchCompleteTodos(ids: List<Int>) {
+        viewModelScope.launch {
+            ids.forEach { id ->
+                repository.updateState(id, TodoState.DONE)
+                appPreferences.incrementTodosDone()
+            }
+        }
+    }
+
+    fun batchReopenTodos(ids: List<Int>) {
+        viewModelScope.launch {
+            ids.forEach { id ->
+                repository.updateState(id, TodoState.OPEN)
+            }
+        }
+    }
+
     fun deleteTodosByIds(ids: List<Int>, onDeleted: () -> Unit = {}) {
         val uniqueIds = ids.distinct()
         if (uniqueIds.isEmpty()) return

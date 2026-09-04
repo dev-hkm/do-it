@@ -97,16 +97,35 @@ fun TodoListItem(
     isUnlocked: Boolean = false
 ) {
     val context = LocalContext.current
+    val now = Clock.System.now()
+    val isOverdue = todo.deadlineDateTime != null && todo.deadlineDateTime <= now && todo.state != TodoState.DONE
+
     val deadlineText = todo.deadlineDateTime?.let { deadline ->
-        val local = deadline.toLocalDateTime(TimeZone.currentSystemDefault()).toJavaLocalDateTime()
-        DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT).format(local)
+        val localDeadline = deadline.toLocalDateTime(TimeZone.currentSystemDefault())
+        val localNow = now.toLocalDateTime(TimeZone.currentSystemDefault())
+        val javaDead = localDeadline.toJavaLocalDateTime()
+        val javaNow = localNow.toJavaLocalDateTime()
+        val timeFormatter = DateTimeFormatter.ofPattern("HH:mm")
+        val timeStr = timeFormatter.format(javaDead)
+
+        when {
+            javaDead.toLocalDate() == javaNow.toLocalDate() -> {
+                context.getString(R.string.deadline_today) + " " + timeStr
+            }
+            javaDead.toLocalDate() == javaNow.toLocalDate().plusDays(1) -> {
+                context.getString(R.string.deadline_tomorrow) + " " + timeStr
+            }
+            else -> {
+                DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT).format(javaDead)
+            }
+        }
     }
 
-    val deadlineColor = todo.deadlineDateTime?.let {
-        if (it <= Clock.System.now()) {
-            MaterialTheme.colorScheme.error
-        } else MaterialTheme.colorScheme.onSurfaceVariant
-    } ?: MaterialTheme.colorScheme.onSurfaceVariant
+    val deadlineColor = if (isOverdue) {
+        MaterialTheme.colorScheme.error
+    } else {
+        MaterialTheme.colorScheme.onSurfaceVariant
+    }
 
     val haptic = LocalHapticFeedback.current
     val currentOnDelete by rememberUpdatedState(onDelete)
@@ -255,11 +274,46 @@ fun TodoListItem(
                     }
 
                     if (deadlineText != null) {
-                        Text(
-                            stringResource(R.string.deadline_template, deadlineText),
-                            style = MaterialTheme.typography.bodySmall,
-                            color = deadlineColor
-                        )
+                        if (isOverdue) {
+                            Surface(
+                                shape = RoundedCornerShape(6.dp),
+                                color = MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.8f),
+                                border = BorderStroke(0.5.dp, MaterialTheme.colorScheme.error.copy(alpha = 0.5f))
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                ) {
+                                    Icon(
+                                        painter = painterResource(com.composables.icons.lucide.R.drawable.lucide_ic_clock_alert),
+                                        contentDescription = null,
+                                        tint = MaterialTheme.colorScheme.error,
+                                        modifier = Modifier.size(11.dp)
+                                    )
+                                    Spacer(modifier = Modifier.width(4.dp))
+                                    Text(
+                                        text = deadlineText,
+                                        style = MaterialTheme.typography.labelSmall.copy(fontSize = 11.sp, fontWeight = FontWeight.SemiBold),
+                                        color = MaterialTheme.colorScheme.onErrorContainer
+                                    )
+                                }
+                            }
+                        } else {
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Icon(
+                                    painter = painterResource(R.drawable.event_24px),
+                                    contentDescription = null,
+                                    tint = deadlineColor,
+                                    modifier = Modifier.size(12.dp)
+                                )
+                                Spacer(modifier = Modifier.width(4.dp))
+                                Text(
+                                    text = deadlineText,
+                                    style = MaterialTheme.typography.bodySmall.copy(fontSize = 12.sp),
+                                    color = deadlineColor
+                                )
+                            }
+                        }
                     }
                 }
             },

@@ -95,6 +95,13 @@ class TodoRepository(
         }
     }
 
+    suspend fun replaceAllTodosAndTags(todos: List<Todo>, tags: List<Tag>) {
+        if (tags.isNotEmpty()) {
+            tagDao.insertAll(tags)
+        }
+        replaceAllTodos(todos)
+    }
+
     suspend fun insert(todo: Todo) {
         val todoId = dao.insert(todo)
         updateWidgetAndNotifications {

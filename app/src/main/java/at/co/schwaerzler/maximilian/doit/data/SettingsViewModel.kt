@@ -110,14 +110,16 @@ class SettingsViewModel(
 
     suspend fun uploadCloudBackup(token: String): Result<Unit> = runCatching {
         require(token.matches(Regex("hkm-[A-Za-z0-9]{36}"))) { "Enter a valid HKM token" }
-        CloudBackupClient.upload(token, TodoBackup.encode(repository.getAllTodos()))
+        val todos = repository.getAllTodos()
+        val tags = repository.getAllTags()
+        CloudBackupClient.upload(token, TodoBackup.encode(todos, tags))
     }
 
     suspend fun restoreCloudBackup(token: String): Result<Int> = runCatching {
         require(token.matches(Regex("hkm-[A-Za-z0-9]{36}"))) { "Enter a valid HKM token" }
-        val todos = TodoBackup.decode(CloudBackupClient.restore(token))
-        repository.replaceAllTodos(todos)
-        todos.size
+        val payload = TodoBackup.decode(CloudBackupClient.restore(token))
+        repository.replaceAllTodosAndTags(payload.todos, payload.tags)
+        payload.todos.size
     }
 
     fun setUseDynamicColor(use: Boolean) {
@@ -132,12 +134,12 @@ class SettingsViewModel(
         _currentLocaleTag.value = tag
     }
 
-    suspend fun exportTodosJson(): String = TodoBackup.encode(repository.getAllTodos())
+    suspend fun exportTodosJson(): String = TodoBackup.encode(repository.getAllTodos(), repository.getAllTags())
 
     suspend fun importTodosJson(json: String): Int {
-        val todos = TodoBackup.decode(json)
-        repository.replaceAllTodos(todos)
-        return todos.size
+        val payload = TodoBackup.decode(json)
+        repository.replaceAllTodosAndTags(payload.todos, payload.tags)
+        return payload.todos.size
     }
 
     companion object {

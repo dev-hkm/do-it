@@ -319,6 +319,14 @@ fun HomeScreen(
             viewModel.togglePinTodos(selectedTodos.toList(), !allPinned)
             selectedTodos = emptySet()
         },
+        onBatchCompleteSelection = {
+            viewModel.batchCompleteTodos(selectedTodos.toList())
+            selectedTodos = emptySet()
+        },
+        onBatchReopenSelection = {
+            viewModel.batchReopenTodos(selectedTodos.toList())
+            selectedTodos = emptySet()
+        },
         modifier = modifier,
         onSelectAll = {
             selectedTodos += openTodos.map { it.id }
@@ -409,6 +417,8 @@ private fun HomeScreenContent(
     onClearSelection: () -> Unit,
     onDeleteSelection: () -> Unit,
     onTogglePinSelection: () -> Unit,
+    onBatchCompleteSelection: () -> Unit,
+    onBatchReopenSelection: () -> Unit,
     onDeleteTodo: (id: Int) -> Unit,
     modifier: Modifier = Modifier,
     onSelectAll: () -> Unit,
@@ -426,6 +436,7 @@ private fun HomeScreenContent(
     var showSortOrderSheet by remember { mutableStateOf(false) }
     var showTagManagerSheet by remember { mutableStateOf(false) }
     var isSearchActive by rememberSaveable { mutableStateOf(false) }
+    var isDoneCollapsed by rememberSaveable { mutableStateOf(false) }
 
     val context = LocalContext.current
     val haptic = LocalHapticFeedback.current
@@ -589,45 +600,85 @@ private fun HomeScreenContent(
 
                         if (doneTodos.isNotEmpty()) {
                             item(key = "done-headline") {
-                                Text(
-                                    stringResource(R.string.done_headline),
-                                    style = MaterialTheme.typography.titleMedium.copy(
-                                        fontWeight = FontWeight.Bold,
-                                        fontSize = 16.sp
-                                    ),
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.75f),
+                                Row(
                                     modifier = Modifier
+                                        .fillMaxWidth()
+                                        .clip(RoundedCornerShape(12.dp))
+                                        .clickable {
+                                            haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
+                                            isDoneCollapsed = !isDoneCollapsed
+                                        }
                                         .padding(horizontal = 24.dp)
                                         .padding(top = if (openTodos.isNotEmpty()) 18.dp else 6.dp, bottom = 6.dp)
-                                        .animateItem()
-                                )
+                                        .animateItem(),
+                                    horizontalArrangement = Arrangement.SpaceBetween,
+                                    verticalAlignment = Alignment.CenterVertically
+                                ) {
+                                    Row(
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                                    ) {
+                                        Text(
+                                            stringResource(R.string.done_headline),
+                                            style = MaterialTheme.typography.titleMedium.copy(
+                                                fontWeight = FontWeight.Bold,
+                                                fontSize = 16.sp
+                                            ),
+                                            color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.75f)
+                                        )
+                                        Surface(
+                                            shape = CircleShape,
+                                            color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.6f)
+                                        ) {
+                                            Text(
+                                                text = "${doneTodos.size}",
+                                                style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
+                                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                                modifier = Modifier.padding(horizontal = 7.dp, vertical = 2.dp)
+                                            )
+                                        }
+                                    }
+                                    Icon(
+                                        painter = painterResource(
+                                            if (isDoneCollapsed) com.composables.icons.lucide.R.drawable.lucide_ic_chevron_down
+                                            else com.composables.icons.lucide.R.drawable.lucide_ic_chevron_up
+                                        ),
+                                        contentDescription = stringResource(
+                                            if (isDoneCollapsed) R.string.expand_section else R.string.collapse_section
+                                        ),
+                                        tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.75f),
+                                        modifier = Modifier.size(18.dp)
+                                    )
+                                }
                             }
 
-                            items(
-                                items = doneTodos,
-                                key = { it.id }
-                            ) { todo ->
-                                TodoListItem(
-                                    todo = todo,
-                                    tag = if (tagsEnabled) todo.tagId?.let { tagMap[it] } else null,
-                                    isUnlocked = todo.id in unlockedTodoIds,
-                                    onStateToggle = { onStateToggle(todo) },
-                                    onClick = {
-                                        if (inSelectionMode) {
+                            if (!isDoneCollapsed) {
+                                items(
+                                    items = doneTodos,
+                                    key = { it.id }
+                                ) { todo ->
+                                    TodoListItem(
+                                        todo = todo,
+                                        tag = if (tagsEnabled) todo.tagId?.let { tagMap[it] } else null,
+                                        isUnlocked = todo.id in unlockedTodoIds,
+                                        onStateToggle = { onStateToggle(todo) },
+                                        onClick = {
+                                            if (inSelectionMode) {
+                                                toggleTodoItemSelection(todo.id)
+                                            } else {
+                                                onClickTodo(todo.id)
+                                            }
+                                        },
+                                        onLongClick = {
                                             toggleTodoItemSelection(todo.id)
-                                        } else {
-                                            onClickTodo(todo.id)
-                                        }
-                                    },
-                                    onLongClick = {
-                                        toggleTodoItemSelection(todo.id)
-                                    },
-                                    onDelete = {
-                                        onDeleteTodo(todo.id)
-                                    },
-                                    selected = todo.id in selectedTodos,
-                                    modifier = Modifier.animateItem()
-                                )
+                                        },
+                                        onDelete = {
+                                            onDeleteTodo(todo.id)
+                                        },
+                                        selected = todo.id in selectedTodos,
+                                        modifier = Modifier.animateItem()
+                                    )
+                                }
                             }
                         }
                     } else {
@@ -865,6 +916,41 @@ private fun HomeScreenContent(
                                 stringResource(if (isAllSelected) R.string.deselect_all else R.string.select_all),
                                 fontWeight = FontWeight.SemiBold
                             )
+                        }
+                        // Batch Complete button (if any selected are open)
+                        val hasOpenSelected = selectedTodos.any { id -> openTodos.any { it.id == id } }
+                        if (hasOpenSelected) {
+                            IconButton(
+                                onClick = {
+                                    haptic.performHapticFeedback(HapticFeedbackType.Confirm)
+                                    onBatchCompleteSelection()
+                                }
+                            ) {
+                                Icon(
+                                    painterResource(R.drawable.check_circle_24px),
+                                    contentDescription = stringResource(R.string.batch_complete),
+                                    tint = MaterialTheme.colorScheme.primary,
+                                    modifier = Modifier.size(20.dp)
+                                )
+                            }
+                        }
+
+                        // Batch Reopen button (if any selected are done)
+                        val hasDoneSelected = selectedTodos.any { id -> doneTodos.any { it.id == id } }
+                        if (hasDoneSelected) {
+                            IconButton(
+                                onClick = {
+                                    haptic.performHapticFeedback(HapticFeedbackType.Confirm)
+                                    onBatchReopenSelection()
+                                }
+                            ) {
+                                Icon(
+                                    painterResource(com.composables.icons.lucide.R.drawable.lucide_ic_undo),
+                                    contentDescription = stringResource(R.string.batch_reopen),
+                                    tint = MaterialTheme.colorScheme.secondary,
+                                    modifier = Modifier.size(20.dp)
+                                )
+                            }
                         }
 
                         // Pin / Unpin Selected

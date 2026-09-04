@@ -185,5 +185,17 @@
 <string name="github_releases_base_url">https://github.com</string>
 <string name="fdroid_package_url">https://f-droid.org</string>
 
-<string name="version">Phiên bản</string><string name="widget_pin_dialog_title">Thêm tiện ích</string><string name="widget_pin_dialog_description">Bạn có muốn thêm tiện ích xem nhanh công việc vào màn hình chính không?</string><string name="dialog_button_neutral">Để sau</string><string name="dialog_button_positive">Thêm ngay</string>
+<string name="version">Phiên bản</string>
+    <string name="widget_pin_dialog_title">Thêm tiện ích</string>
+    <string name="widget_pin_dialog_description">Bạn có muốn thêm tiện ích xem nhanh công việc vào màn hình chính không?</string>
+    <string name="dialog_button_neutral">Để sau</string>
+    <string name="dialog_button_positive">Thêm ngay</string>
+    <string name="deadline_today">Hôm nay</string>
+    <string name="deadline_tomorrow">Ngày mai</string>
+    <string name="deadline_overdue">Quá hạn</string>
+    <string name="badge_count_items">%1$d</string>
+    <string name="collapse_section">Thu gọn</string>
+    <string name="expand_section">Mở rộng</string>
+    <string name="batch_complete">Đánh dấu hoàn thành</string>
+    <string name="batch_reopen">Đánh dấu chưa xong</string>
 </resources>
