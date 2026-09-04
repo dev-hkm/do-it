@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Static widget-picker previews. Keep these independent from runtime theme colors. -->
+    <color name="widget_preview_background">#FF191919</color>
+    <color name="widget_preview_surface">#FF2A2A2A</color>
+    <color name="widget_preview_on_surface">#FFF3F1F4</color>
+    <color name="widget_preview_on_surface_variant">#FFC8C4C8</color>
+    <color name="widget_preview_primary">#FFD0BCFF</color>
+    <color name="widget_preview_on_primary">#FF381E72</color>
+    <color name="widget_preview_primary_container">#FF4F378B</color>
+</resources>

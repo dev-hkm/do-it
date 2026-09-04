@@ -1,0 +1,21 @@
+Do-It ist eine übersichtliche, ablenkungsfreie To-Do-App, die dir hilft, den Überblick über deine Aufgaben zu behalten.
+
+<b>Funktionen</b>
+
+– Anzeige offener und erledigter Aufgaben in separaten Bereichen
+– Hinzufügen und Bearbeiten von Aufgaben mit Titel, optionaler Beschreibung und optionalem Fälligkeitsdatum
+– Markieren von Aufgaben als erledigt oder offen mit einem einzigen Fingertipp
+- Mehrfachauswahl von Aufgaben durch langes Drücken, anschließend Sammellöschung oder „Alle auswählen“
+- Überfällige Aufgaben werden hervorgehoben, damit nichts übersehen wird
+- Startbildschirm-Widget, um deine offenen Aufgaben auf einen Blick zu sehen
+- Startbildschirm-Verknüpfung, um sofort eine neue Aufgabe zu erstellen
+- Benachrichtigungen für Aufgabenfristen, um nichts mehr zu verpassen
+- Wähle aus, wie lang im Voraus du über eine Frist benachrichtigt werden willst
+- Auswahl des Designs in der App (hell, dunkel oder Systemstandard)
+- Sprachauswahl in der App
+- Motivierende Meldungen bei leerer Liste oder wenn alles erledigt ist
+- Randlose Benutzeroberfläche gemäß den Richtlinien von Material Design 3
+
+<b>Open Source</b>
+
+Do-It ist eine kostenlose Open-Source-Software, lizenziert unter der Apache-Lizenz 2.0. Keine Werbung, kein Tracking, keine Konten erforderlich.

@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+<string name="app_name" translatable="false">TODO</string>
+    <plurals name="todos_selected_template">
+        <item quantity="one">%1$d selected</item>
+        <item quantity="other">%1$d selected</item>
+    </plurals>
+    <plurals name="todos_deleted_template">
+        <item quantity="one">TODO deleted</item>
+        <item quantity="other">TODOs deleted</item>
+    </plurals>
+<string name="just_do_it_app_bar" translatable="false">TODO</string>
+<string name="add_new_todo_fab">Add a new TODO</string>
+<string name="you_did_everything_empty_text">You did everything! 🚀</string>
+<string name="done_headline">Done</string>
+<string name="open_headline">Open</string>
+<string name="pinned_headline">Pinned</string>
+<string name="nothing_to_do_empty_text">Nothing to do! 🥳</string>
+<string name="add_new_todo_button">Add a new TODO with the button below.</string>
+<string name="discard_changes_question">Discard changes?</string>
+<string name="unsaved_changes_lost">Your unsaved changes will be lost.</string>
+<string name="discard">Discard</string>
+<string name="keep_editing">Keep editing</string>
+<string name="next">Next</string>
+<string name="cancel">Cancel</string>
+<string name="done_fab">Done</string>
+<string name="add_new_todo_app_bar">Add new TODO</string>
+<string name="edit_todo_app_bar">Edit TODO</string>
+<string name="delete_todo">Delete TODO</string>
+<string name="share_todo">Share TODO</string>
+<string name="pin_todo">Pin to top</string>
+<string name="unpin_todo">Unpin</string>
+<string name="duplicate_todo">Duplicate</string>
+<string name="todo_duplicated">Task duplicated</string>
+<string name="search_hint">Search tasks…</string>
+<string name="search_no_results">No matching tasks</string>
+<string name="quick_date_today">Today 18:00</string>
+<string name="quick_date_tomorrow">Tomorrow 09:00</string>
+<string name="quick_date_this_weekend">Weekend 09:00</string>
+<string name="quick_date_next_week">Next week</string>
+<string name="title">Title</string>
+<string name="required">Required</string>
+<string name="description">Description</string>
+<string name="optional">Optional</string>
+<string name="set_deadline">Set deadline</string>
+<string name="deadline">Deadline</string>
+<string name="select_this_todo">Select this TODO</string>
+<string name="deadline_template">Deadline: %1$s</string>
+<string name="title_is_required">Title is required</string>
+<string name="select_time">Select time</string>
+<string name="clear_selection">Clear selection</string>
+<string name="select_all">Select all</string>
+<string name="github_repo_url" translatable="false">https://github.com/maximilian-schwaerzler/Do-It</string>
+<string name="github_releases_base_url" translatable="false">https://github.com/maximilian-schwaerzler/Do-It/releases/tag</string>
+<string name="fdroid_package_url" translatable="false">https://f-droid.org/packages/at.co.schwaerzler.maximilian.doit</string>
+<string name="settings_language">Language</string>
+<string name="settings_language_dialog_title">Select language</string>
+<string name="settings_language_system_default">System default</string>
+<string name="settings_app_bar">Settings</string>
+<string name="theme_light">Light</string>
+<string name="theme_dark">Dark</string>
+<string name="theme_follow_system">Follow system</string>
+<string name="settings_section_about">About</string>
+<string name="app_version">Version</string>
+<string name="source_code">Source Code</string>
+<string name="f_droid_package">F-Droid Package</string>
+<string name="theme">Theme</string>
+<string name="settings_section_general">General</string>
+<string name="overview_widget_description">Overview of your open TODOs</string>
+<string name="quick_add_widget_description">Quick add and tasks counter</string>
+<string name="today_tasks_widget_description">Priority and deadline tasks</string>
+<string name="widget_more_tasks">+%1$d more tasks</string>
+<string name="new_todo_shortcut_short_label">New TODO</string>
+<string name="yes_dialog">Yes</string>
+<string name="do_not_ask_again_dialog">Don\'t ask again</string>
+<string name="add_widget_dialog">Add widget</string>
+<string name="add_widget_dialog_text">Would you like to add a widget with an overview of all your open tasks to your home screen?</string>
+<string name="permission_granted">Notification permission granted</string>
+<string name="notification_permission_dialog_text">To show you a notification when the deadline is approaching, we need your permission.</string>
+<string name="notification_permission_dialog_title">Notification permission</string>
+<string name="todo_deadline_notif_channel_name">TODO Deadline</string>
+<string name="todo_deadline_notif_channel_description">Notifications on deadlines of TODOs</string>
+<string name="todo_deadline_notif_channel_id" translatable="false">deadline-notifications</string>
+<string name="deadline_notification_unique_work_name_template" translatable="false">deadline_%1$d</string>
+<string name="deadline_notification_worker_todo_id_input_data" translatable="false">todo_id</string>
+<string name="deadline_notification_worker_lead_time_input_data" translatable="false">lead_time</string>
+<string name="deadline_notification_content_text">Your TODO \'%1$s\' is due in %2$s</string>
+<string name="deadline_notification_content_title">TODO Deadline approaching</string>
+<string name="settings_notif_lead_time">Notification lead time</string>
+<string name="notif_lead_time_5_minutes">5 minutes</string>
+<string name="notif_lead_time_30_minutes">30 minutes</string>
+<string name="notif_lead_time_2_hours">2 hours</string>
+<string name="notif_lead_time_1_day">1 day</string>
+<string name="undo_snackbar_action_label">Undo</string>
+<string name="dynamic_color_setting_label">Dynamic Color</string>
+<string name="sort_label_creation_date_newest_first">Newest created first</string>
+<string name="sort_label_creation_date_oldest_first">Oldest created first</string>
+<string name="sort_label_alphabetical_a_z">Alphabetical</string>
+<string name="sort_label_alphabetical_z_a">Alphabetical (reversed)</string>
+<string name="sort_label_deadline_soonest_first">Deadline (soonest first)</string>
+<string name="settings_section_data">Data</string>
+<string name="backup_export">Export local backup</string>
+<string name="backup_import">Import local backup</string>
+<string name="backup_export_description">Save all tasks as a JSON file</string>
+<string name="backup_import_description">Replace current tasks from a JSON file</string>
+<string name="backup_export_filename">todo-backup.json</string>
+<string name="backup_import_success">Imported %1$d tasks</string>
+<string name="backup_import_error">Could not import this backup</string>
+<string name="settings_cloud_backup">Cloud backup</string>
+<string name="cloud_backup_token_label">Backup token</string>
+<string name="cloud_backup_token_hint">hkm-36-character-token</string>
+<string name="cloud_backup_generate">Generate token</string>
+<string name="cloud_backup_upload">Back up to cloud</string>
+<string name="cloud_backup_restore">Restore from cloud</string>
+<string name="cloud_backup_help">Your token is the only key. Keep it private.</string>
+<string name="cloud_backup_copy">Copy backup token</string>
+<string name="cloud_backup_uploaded">Cloud backup updated</string>
+<string name="cloud_backup_restored">Restored %1$d tasks from cloud</string>
+<string name="cloud_backup_failed">Cloud backup failed: %1$s</string>
+<string name="settings_sort_order">Task order</string>
+<string name="settings_font">App font</string>
+<string name="font_nunito">Nunito</string>
+<string name="font_inter">Inter</string>
+<string name="font_plus_jakarta_sans">Plus Jakarta Sans</string>
+<string name="font_be_vietnam_pro">Be Vietnam Pro</string>
+<string name="font_outfit">Outfit</string>
+<string name="font_poppins">Poppins</string>
+<string name="font_lexend">Lexend</string>
+<string name="font_montserrat">Montserrat</string>
+<string name="font_space_grotesk">Space Grotesk</string>
+<string name="font_jetbrains_mono">JetBrains Mono</string>
+<string name="font_playfair_display">Playfair Display</string>
+<string name="font_comfortaa">Comfortaa</string>
+<string name="font_ubuntu">Ubuntu</string>
+<string name="font_space_mono">Space Mono</string>
+<string name="font_eb_garamond">EB Garamond</string>
+<string name="font_roboto_slab">Roboto Slab</string>
+<string name="font_patrick_hand">Patrick Hand</string>
+<string name="font_edu_sa_hand">Edu SA Hand</string>
+
+    
+<string name="all_tags">All</string>
+<string name="tags_title">Tags</string>
+<string name="tags_enabled_setting">Tags</string>
+<string name="tags_enabled_subtitle">Show tag filters and tag controls in tasks</string>
+<string name="no_tag">No Tag</string>
+<string name="new_tag">New Tag</string>
+<string name="create_tag">Create Tag</string>
+<string name="edit_tag">Edit Tag</string>
+<string name="delete_tag">Delete Tag</string>
+<string name="delete_tag_confirmation">Are you sure you want to delete this tag?</string>
+<string name="tag_name">Tag Name</string>
+<string name="tag_name_hint">e.g. Work, Urgent, Personal</string>
+<string name="tag_color">Tag Color</string>
+<string name="tag_icon">Tag Icon</string>
+<string name="select_icon">Select Icon</string>
+<string name="search_icons_hint">Search 1600+ icons...</string>
+<string name="no_icons_found">No icons found</string>
+<string name="manage_tags">Manage Tags</string>
+<string name="tags_management_title">Tags &amp; Icons</string>
+<string name="tags_management_count_template">%1$d tags</string>
+<string name="no_tasks_in_tag">No tasks in this tag</string>
+<string name="tap_to_clear_filter">Tap \'All\' or select another tag</string>
+
+    
+<string name="security_lock_section">Security &amp; Privacy</string>
+<string name="app_lock_title">App Lock</string>
+<string name="app_lock_description">Require PIN or Biometrics to access</string>
+<string name="unlock_task_title">Unlock Task</string>
+<string name="enter_pin_to_unlock">Enter your 4-digit PIN to continue</string>
+<string name="enter_pin_to_disable_lock">Enter your PIN to disable App Lock</string>
+<string name="create_4digit_pin">Set 4-digit PIN</string>
+<string name="confirm_4digit_pin">Confirm your PIN</string>
+<string name="pins_dont_match">PINs do not match. Try again.</string>
+<string name="incorrect_pin">Incorrect PIN. Try again.</string>
+<string name="change_pin_title">Change PIN</string>
+<string name="change_pin_subtitle">Update your 4-digit security PIN</string>
+<string name="biometric_unlock_setting">Biometric Unlock</string>
+<string name="biometric_unlock_subtitle">Use Fingerprint or Face unlock</string>
+<string name="biometric_prompt_reason">Authenticate to access protected content</string>
+<string name="lock_this_task">Lock this task</string>
+<string name="lock_this_task_subtitle">Hide title and require authentication</string>
+<string name="locked_task_title_mask">••••••••••••</string>
+<string name="unlock_shortcut">Unlock</string>
+
+    
+<string name="save">Save</string>
+<string name="preset_today">Today 18:00</string>
+<string name="preset_tomorrow">Tomorrow 18:00</string>
+<string name="preset_next_week">Next Mon 09:00</string>
+<string name="edit_mode">Edit</string>
+<string name="preview_mode">Preview</string>
+<string name="clear_deadline">Clear deadline</string>
+<string name="no_deadline_set">No deadline set</string>
+<string name="change_deadline">Change Date</string>
+<string name="empty_markdown_preview">Nothing to preview yet</string>
+<string name="deselect_all">Deselect All</string>
+<string name="settings_section_behavior">Behavior &amp; Sorting</string><string name="backup_section_title">Backup &amp; Restore</string><string name="backup_export_title">Export local backup</string><string name="backup_export_subtitle">Save all tasks as a JSON file</string><string name="backup_import_title">Import local backup</string><string name="backup_import_subtitle">Restore tasks from a JSON file</string><string name="cloud_backup_new_token">New Token</string><string name="version">Version</string><string name="version_unknown">Unknown</string><string name="settings_theme_dialog_title">Choose Theme</string><string name="settings_font_dialog_subtitle">Choose font style for the app</string><string name="notification_lead_time_title">Notification Time</string><string name="settings_notification_lead_time_dialog_title">Notify before deadline</string><string name="settings_sort_order_dialog_title">Sort tasks by</string><string name="widget_pin_dialog_title">Add Widget</string><string name="widget_pin_dialog_description">Would you like to add a quick overview widget to your home screen?</string><string name="dialog_button_neutral">Not Now</string><string name="dialog_button_positive">Add Widget</string>
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2026 Maximilian Schwärzler
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  --><resources>
+    <plurals name="todos_selected_template">
+        <item quantity="one">%1$d selezionato</item>
+        <item quantity="many">%1$d selezionati</item>
+        <item quantity="other">%1$d selezionati</item>
+    </plurals>
+    <string name="add_new_todo_fab">Aggiungi una nuova attività</string>
+    <string name="you_did_everything_empty_text">Hai fatto tutto! 🚀</string>
+    <string name="done_headline">Fatto</string>
+    <string name="open_headline">Apri</string>
+    <string name="nothing_to_do_empty_text">Niente da fare! 🥳</string>
+    <string name="add_new_todo_button">Aggiungi una nuova attività utilizzando il pulsante qui sotto.</string>
+    <string name="discard_changes_question">Annullare le modifiche?</string>
+    <string name="unsaved_changes_lost">Le modifiche non salvate andranno perse.</string>
+    <string name="discard">Elimina</string>
+    <string name="keep_editing">Continua a modificare</string>
+    <string name="next">Avanti</string>
+    <string name="cancel">Annulla</string>
+    <string name="done_fab">Fatto</string>
+    <string name="add_new_todo_app_bar">Aggiungi una nuova attività</string>
+    <string name="edit_todo_app_bar">Modifica da fare</string>
+    <string name="delete_todo">Elimina da fare</string>
+    <string name="share_todo">Condividi Elenco cose da fare</string>
+    <string name="title">Titolo</string>
+    <string name="required">Obbligatorio</string>
+    <string name="description">Descrizione</string>
+    <string name="optional">Facoltativo</string>
+    <string name="set_deadline">Fissare una scadenza</string>
+    <string name="deadline">Scadenza</string>
+    <string name="select_this_todo">Seleziona questa attività</string>
+    <string name="deadline_template">Scadenza: %1$s</string>
+    <string name="title_is_required">Il titolo è obbligatorio</string>
+    <string name="select_time">Seleziona l\'ora</string>
+    <string name="clear_selection">Deseleziona</string>
+    <string name="select_all">Seleziona tutto</string>
+    <string name="settings_language">Lingua</string>
+    <string name="settings_language_dialog_title">Seleziona la lingua</string>
+    <string name="settings_language_system_default">Impostazioni predefinite del sistema</string>
+    <string name="settings_app_bar">Impostazioni</string>
+    <string name="theme_light">Luce</string>
+    <string name="theme_dark">Buio</string>
+    <string name="theme_follow_system">Sistema di tracciamento</string>
+    <string name="settings_section_about">Informazioni su</string>
+    <string name="app_version">Versione</string>
+    <string name="source_code">Codice sorgente</string>
+    <string name="f_droid_package">Pacchetto F-Droid</string>
+    <string name="theme">Tema</string>
+    <string name="settings_section_general">Informazioni generali</string>
+    <string name="overview_widget_description">Panoramica delle attività in sospeso</string>
+    <string name="new_todo_shortcut_short_label">Nuovo da fare</string>
+    <string name="yes_dialog">Sì</string>
+    <string name="do_not_ask_again_dialog">Non chiedermelo di nuovo</string>
+    <string name="add_widget_dialog">Aggiungi widget</string>
+    <string name="add_widget_dialog_text">Ti piacerebbe aggiungere alla schermata iniziale un widget con una panoramica di tutte le tue attività in corso?</string>
+</resources>

@@ -1,0 +1,58 @@
+/*
+ * Copyright 2026 Maximilian Schwärzler
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+
+package at.co.schwaerzler.maximilian.doit
+
+import android.graphics.Color
+import android.os.Build
+import android.os.Bundle
+import androidx.activity.SystemBarStyle
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.runtime.getValue
+import androidx.core.view.WindowCompat
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import at.co.schwaerzler.maximilian.doit.ui.navigation.AppNavigation
+import at.co.schwaerzler.maximilian.doit.ui.theme.DoItTheme
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.auto(
+                Color.TRANSPARENT,
+                Color.TRANSPARENT
+            ),
+            navigationBarStyle = SystemBarStyle.auto(
+                Color.TRANSPARENT,
+                Color.TRANSPARENT
+            )
+        )
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            window.isNavigationBarContrastEnforced = false
+            window.isStatusBarContrastEnforced = false
+        }
+        setContent {
+            val useDynamicColors by (application as DoItApplication).appPreferences.useDynamicColors.collectAsStateWithLifecycle(true)
+            val appFont by (application as DoItApplication).appPreferences.appFont.collectAsStateWithLifecycle()
+            DoItTheme(dynamicColor = useDynamicColors, appFont = appFont) {
+                AppNavigation()
+            }
+        }
+    }
+}

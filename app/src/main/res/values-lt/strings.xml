@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2026 Maximilian Schwärzler
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  --><resources>
+    <plurals name="todos_selected_template">
+        <item quantity="one">%1$d pasirinkta</item>
+        <item quantity="few">%1$d pasirinktos</item>
+        <item quantity="many">%1$d pasirinktų</item>
+        <item quantity="other">%1$d pasirinktų</item>
+    </plurals>
+    <string name="add_new_todo_fab">Pridėti naują užduotį</string>
+    <string name="you_did_everything_empty_text">Tu viską padarei! 🚀</string>
+    <string name="done_headline">Baigta</string>
+    <string name="open_headline">Atidaryti</string>
+    <string name="nothing_to_do_empty_text">Nėra ką veikti! 🥳</string>
+    <string name="add_new_todo_button">Pridėkite naują užduotį naudodami žemiau esantį mygtuką.</string>
+    <string name="discard_changes_question">Atšaukti pakeitimus?</string>
+    <string name="unsaved_changes_lost">Jūsų neišsaugoti pakeitimai bus prarasti.</string>
+    <string name="discard">Atmesti</string>
+    <string name="keep_editing">Tęsk redagavimą</string>
+    <string name="next">Toliau</string>
+    <string name="cancel">Atšaukti</string>
+    <string name="done_fab">Baigta</string>
+    <string name="add_new_todo_app_bar">Pridėti naują užduotį</string>
+    <string name="edit_todo_app_bar">Redaguoti užduotis</string>
+    <string name="delete_todo">Ištrinti užduotis</string>
+    <string name="share_todo">Dalytis Darbo sąrašas</string>
+    <string name="title">Pavadinimas</string>
+    <string name="required">Privaloma</string>
+    <string name="description">Aprašymas</string>
+    <string name="optional">Neprivaloma</string>
+    <string name="set_deadline">Nustatyti terminą</string>
+    <string name="deadline">Terminas</string>
+    <string name="select_this_todo">Pažymėkite šį užduotį</string>
+    <string name="deadline_template">Paskutinė pateikimo diena: %1$s</string>
+    <string name="title_is_required">Reikia įvesti pavadinimą</string>
+    <string name="select_time">Pasirinkite laiką</string>
+    <string name="clear_selection">Išvalyti pasirinkimą</string>
+    <string name="select_all">Pažymėti viską</string>
+    <string name="settings_language">Kalba</string>
+    <string name="settings_language_dialog_title">Pasirinkite kalbą</string>
+    <string name="settings_language_system_default">Sistemos numatytasis nustatymas</string>
+    <string name="settings_app_bar">Nustatymai</string>
+    <string name="theme_light">Šviesa</string>
+    <string name="theme_dark">Tamsus</string>
+    <string name="theme_follow_system">Sekimo sistema</string>
+    <string name="settings_section_about">Apie</string>
+    <string name="app_version">Versija</string>
+    <string name="source_code">Šaltinio kodas</string>
+    <string name="f_droid_package">„F-Droid“ paketas</string>
+    <string name="theme">Fonas</string>
+    <string name="settings_section_general">Bendrieji</string>
+    <string name="overview_widget_description">Jūsų nebaigtų užduočių apžvalga</string>
+    <string name="new_todo_shortcut_short_label">Naujas užduotis</string>
+    <string name="yes_dialog">Taip</string>
+    <string name="do_not_ask_again_dialog">Daugiau neklausk</string>
+    <string name="add_widget_dialog">Pridėti valdiklį</string>
+    <string name="add_widget_dialog_text">Ar norėtumėte pagrindiniame ekrane įdėti valdiklį, kuriame būtų pateikta visų jūsų neatliktų užduočių apžvalga?</string>
+</resources>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2026 Maximilian Schwärzler
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  --><resources>
+    <plurals name="todos_selected_template">
+        <item quantity="one">%1$d ausgewählt</item>
+        <item quantity="other">%1$d ausgewählt</item>
+    </plurals>
+    <string name="add_new_todo_fab">Neue Aufgabe</string>
+    <string name="you_did_everything_empty_text">Alles erledigt! 🚀</string>
+    <string name="done_headline">Fertig</string>
+    <string name="open_headline">Offen</string>
+    <string name="nothing_to_do_empty_text">Alles erledigt! 🥳</string>
+    <string name="add_new_todo_button">Neue Aufgabe unten hinzufügen</string>
+    <string name="discard_changes_question">Änderungen verwerfen?</string>
+    <string name="unsaved_changes_lost">Alle ungespeicherten Änderungen werden verworfen.</string>
+    <string name="discard">Verwerfen</string>
+    <string name="keep_editing">Weitermachen</string>
+    <string name="next">Weiter</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="done_fab">Fertig</string>
+    <string name="add_new_todo_app_bar">Neue Aufgabe</string>
+    <string name="edit_todo_app_bar">Aufgabe bearbeiten</string>
+    <string name="delete_todo">Aufgabe löschen</string>
+    <string name="share_todo">Aufgabe teilen</string>
+    <string name="title">Titel</string>
+    <string name="required">Erforderlich</string>
+    <string name="description">Beschreibung</string>
+    <string name="optional">Optional</string>
+    <string name="set_deadline">Frist hinzufügen</string>
+    <string name="deadline">Frist</string>
+    <string name="select_this_todo">Aufgabe auswählen</string>
+    <string name="deadline_template">Frist: %1$s</string>
+    <string name="title_is_required">Titel erforderlich</string>
+    <string name="select_time">Zeit auswählen</string>
+    <string name="clear_selection">Auswahl aufheben</string>
+    <string name="select_all">Alles auswählen</string>
+    <string name="settings_language">Sprache</string>
+    <string name="settings_language_dialog_title">Sprache auswählen</string>
+    <string name="settings_language_system_default">Systemstandard</string>
+    <string name="settings_app_bar">Einstellungen</string>
+    <string name="theme_light">Hell</string>
+    <string name="theme_dark">Dunkel</string>
+    <string name="theme_follow_system">Automatisch</string>
+    <string name="settings_section_about">Über</string>
+    <string name="app_version">Version</string>
+    <string name="source_code">Quellcode</string>
+    <string name="f_droid_package">F-Droid-Paket</string>
+    <string name="theme">Thema</string>
+    <string name="settings_section_general">Allgemein</string>
+    <string name="overview_widget_description">Übersicht über deine offenen Aufgaben</string>
+    <string name="new_todo_shortcut_short_label">Neue Aufgabe</string>
+    <string name="yes_dialog">Ja</string>
+    <string name="do_not_ask_again_dialog">Nicht nochmal fragen</string>
+    <string name="add_widget_dialog">Widget hinzufügen</string>
+    <string name="add_widget_dialog_text">Möchten Sie ein Widget mit einer Übersicht über alle Ihre offenen Aufgaben auf Ihrem Startbildschirm hinzufügen?</string>
+    <string name="permission_granted">Benachrichtigungen erlaubt</string>
+    <string name="notification_permission_dialog_text">Wir brauchen Ihre Erlaubnis, um Ihnen eine Benachrichtigung zu schicken, bevor die Frist abläuft.</string>
+    <string name="notification_permission_dialog_title">Benachrichtigungserlaubnis</string>
+    <string name="todo_deadline_notif_channel_name">Aufgabenfrist</string>
+    <string name="todo_deadline_notif_channel_description">Fristbenachrichtigungen von Aufgaben</string>
+    <string name="deadline_notification_content_text">Ihre Aufgabe \'%1$s\' ist in %2$s fällig</string>
+    <string name="deadline_notification_content_title">Baldige Aufgabenfrist</string>
+    <string name="settings_notif_lead_time">Vorlaufzeit für Benachrichtigungen</string>
+    <string name="notif_lead_time_5_minutes">5 Minuten</string>
+    <string name="notif_lead_time_30_minutes">30 Minuten</string>
+    <string name="notif_lead_time_2_hours">2 Stunden</string>
+    <string name="notif_lead_time_1_day">1 Tag</string>
+    <string name="sort_label_creation_date_oldest_first">Älteste zuerst</string>
+    <string name="sort_label_alphabetical_a_z">Alphabetisch</string>
+    <string name="undo_snackbar_action_label">Rückgängig</string>
+    <string name="dynamic_color_setting_label">Dynamische Farben</string>
+    <plurals name="todos_deleted_template">
+        <item quantity="one">Aufgabe gelöscht</item>
+        <item quantity="other">Aufgaben gelöscht</item>
+    </plurals>
+    <string name="sort_label_alphabetical_z_a">Alphabetisch (umgekehrt)</string>
+    <string name="sort_label_deadline_soonest_first">Frist (früheste zuerst)</string>
+    <string name="sort_label_creation_date_newest_first">Neuste zuerst</string>
+</resources>

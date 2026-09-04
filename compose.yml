@@ -1,0 +1,9 @@
+services:
+  fdroid-build:
+    image: registry.gitlab.com/fdroid/fdroidserver:buildserver
+    volumes:
+      - .:/build
+      - ./local.properties.docker:/build/local.properties
+    working_dir: /build
+    entrypoint: ["/build/scripts/docker-entrypoint.sh"]
+    command: ["./gradlew", "assembleRelease", "--no-daemon", "--no-configuration-cache"]

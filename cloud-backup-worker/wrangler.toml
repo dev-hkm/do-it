@@ -1,0 +1,8 @@
+name = "do-it-cloud-backup"
+main = "src/index.ts"
+compatibility_date = "2026-08-11"
+
+[[d1_databases]]
+binding = "BACKUPS"
+database_name = "do-it-backups"
+database_id = "ab2b65c2-4e17-4b0b-8346-ae0f134d81fc"

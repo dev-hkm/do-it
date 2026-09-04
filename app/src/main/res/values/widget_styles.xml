@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Glance LazyColumn is backed by a ListView. The list remains scrollable, but the launcher
+         must not draw the platform scrollbar requested by the widget UI. -->
+    <style name="Glance.AppWidget.List" parent="">
+        <item name="android:scrollbars">none</item>
+        <item name="android:fadeScrollbars">false</item>
+        <item name="android:overScrollMode">never</item>
+    </style>
+</resources>
